@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#wrap{
+
+    margin: 0 auto;
+
+    margin-top: 60px;
+    
+}
+
+h2{
+	fontsize : 30px;
+	text-align : center;
+	margin-bottom : 40px;
+}
+
+
+#container{
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.find{
+  display: flex;
+
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  position: relative;
+
+
+  /* background-color: aliceblue; */
+  
+}
+
+.textQ input{
+  width: 500px;
+  height: 30px;
+
+  border: 1px solid rgb(178, 199, 183);
+  border-radius: 20px;
+
+  margin-left: 55px;
+  text-align: center;
+}
+
+.searchB{
+  width: 60px;
+  height: 27px;
+
+  border: 1px solid rgb(178, 199, 183);
+  border-radius: 20px;
+
+  position: absolute;
+  right: 46px;
+  top: 3px;
+
+  background-color: rgb(177, 223, 177);
+
+}
+
+.conTop{
+  width: 900px;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+
+  position: relative;
+  /* background-color: aquamarine; */
+
+  align-items: center;
+  margin-bottom:8px;
+
+
+}
+
+.totalCon{
+
+}
+
+.blind{
+
+  position: absolute;
+  right: 120px;
+  
+}
+
+.showNum{
+  width: 100px;
+  height: 25px;
+  border: 1px solid rgb(178, 199, 183);
+  position: absolute;
+  right: 0px;
+
+}
+
+
+.contain{
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 1200px;
+    
+}
+
+.contitle{
+  width: 900px;
+
+  background-color: rgb(229, 245, 229);
+  border: 3px solid rgb(178, 199, 183);
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+
+    /* 어차피 table로 만든 후 rowspan을 했기 떄문에, 세로정렬이 필요없다. */
+    /* display: flex;*/
+}
+
+.contitle p{
+  display: inline-block;
+
+}
+
+.conNum{
+  margin-right: 270px;
+}
+
+.conTitle{
+  margin-right: 250px;
+}
+
+.conWriter, .conWriteDate, .conView{
+  margin-right: 30px;
+}
+
+
+
+.contents{
+  border-right: 5px solid rgb(217, 235, 221);
+  border-top: 5px solid rgb(217, 235, 221);
+  border-bottom: 5px solid rgb(217, 235, 221);
+
+  width: 900px;
+  background-color: rgb(229, 245, 229);
+  border: 3px solid rgb(178, 199, 183);
+
+  padding: 0 20px;
+  box-sizing: border-box;
+  
+}
+
+.contents p{
+  display: inline-block;
+  height : 20px;
+  
+}
+
+.bno, .cnt{
+  width: 10%;
+  margin-right: 10px;
+
+  text-align: center;
+  
+  
+}
+
+.title{
+  width: 30%;
+  margin-right: 10px;
+
+  text-align: center;
+
+}
+
+.writer, .regdate {
+  width: 10%;
+  margin-right: 10px;
+
+  text-align: center;
+
+}
+
+.good{
+  width: 10%;
+  margin-right: 10px;
+
+  text-align: center;
+
+}
+
+
+
+.conBottom{
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+#selectdate{
+  width: 100px;
+  height: 30px;
+
+  border: 1px solid rgb(178, 199, 183);
+
+  margin-top: 20px;
+
+}
+
+#selectQ{
+  width: 100px;
+  height: 30px;
+
+  border: 1px solid rgb(178, 199, 183);
+
+  margin-top: 20px;
+
+}
+
+#keyword{
+
+  height : 25px;
+  border: 1px solid rgb(178, 199, 183);
+
+
+	
+}
+
+
+.conB2{
+  width: 60px;
+  height: 30px;
+
+  border: 1px solid rgb(178, 199, 183);
+
+  margin-top: 20px;
+
+  background-color: rgb(177, 223, 177);
+}
+
+
+/* 페이지 넘기는 곳 */
+.page{
+  width: 300px;
+  margin: 60px auto;
+
+  display: flex;
+  justify-content: space-between;
+  /* background-color: blanchedalmond; */
+}
+
+.pagination{
+	display : flex;
+}
+
+.pageL, .pageR{
+  display: flex;
+  
+    width: 30px;
+  height: 30px;
+  margin: 0 5px 0 5px;
+  /* text-align: center; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px 0px 20px 0px;
+
+  background-color: rgb(199, 185, 145);
+}
+
+.next{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+
+  background-color: darkgrey;
+}
+
+.moreNext{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(226, 219, 219);
+}
+
+.pageC{
+  display: flex;
+}
+
+.pageC .PNum{
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 0 5px;
+  /* text-align: center; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px 0px 20px 0px;
+
+  background-color: rgb(189, 218, 189);
+}
+
+
+
+
