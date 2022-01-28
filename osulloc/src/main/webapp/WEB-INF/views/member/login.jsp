@@ -18,7 +18,7 @@
 
     <div id="wrap"> 
     	<div class="homeback">
-            <a href="../page/mainpage"><img src="/resources/img/logo_m.png"></a>
+            <a href="../page/mainpage"><img src="/resources/img/오설록 로고.png"></a>
         </div>
     
         <div class="headerBox">

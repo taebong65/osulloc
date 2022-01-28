@@ -106,6 +106,7 @@ img{
     font-weight: bolder;
 }
 
+
 .search{
     display: flex;
 }
@@ -136,4 +137,13 @@ img{
     background-repeat: no-repeat;
     background-position: center ;
     text-indent: -99999px;
+}
+
+#logoutBtn{
+	position : absolute;
+	top:-2px;
+	right : -30px;
+}
+.welcome{
+	margin-bottom : 10px;
 }

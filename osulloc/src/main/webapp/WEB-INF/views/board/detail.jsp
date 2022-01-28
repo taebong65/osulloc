@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../resources/js/detail.js"></script>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <title>Document</title>
 </head>
 <body>
@@ -84,9 +85,11 @@
                 </div>
                 <div class="board_btn">
                     <a href="/osulloc/board/noticeBoard" class="b_btn">목록</a>
-                    <a href="/osulloc/board/write" class="b_write">글쓰기</a>
 					<a href="/osulloc/board/modify?bno=${detail.bno}">수정</a>
 			    	<a href="/osulloc/board/remove?bno=${detail.bno}">삭제</a>
+                    <c:if test="${login!=null}">
+		<div class="write"><a href="/board/write"  class="page-link">글쓰기</a></div>
+					</c:if>
                 </div><!--본문_본문_푸터-->
             </div><!--본문_본문-->
             <div class="bc_footer">

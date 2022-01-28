@@ -5,7 +5,7 @@
 <head>
 <link href="../resources/css/member.css" rel="stylesheet" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../resources/js/member1.js"></script>
+<script src="../resources/js/member.js"></script>
 <meta charset="UTF-8">
 
     <title>회원가입</title>

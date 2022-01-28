@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="header">
    <div class="headerIn">
        <div class="logo">
@@ -18,8 +18,12 @@
        </div><!--.gnb-->
 
        <div class="member" method="POST">
+       		<div class="welcome">
+               <c:if test="${login != null }">
+					<p>${login.id}님 환영 합니다.</p><button id="logoutBtn" type="button">로그아웃</button></c:if>
+			</div>
            <ul>
-               <li><a href="../member/login">로그인</a></li>
+               <c:if test="${login == null}"><li><a href="/member/login">로그인</a></li></c:if>
                <li><a href="#">장바구니</a></li>
                <li><a href="#">언어</a></li>
            </ul>

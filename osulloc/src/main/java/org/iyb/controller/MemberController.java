@@ -1,8 +1,10 @@
 package org.iyb.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 //import javax.swing.plaf.synth.SynthSeparatorUI;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.iyb.domain.MemberDTO;
 import org.iyb.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -17,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 	@Autowired
 	private MemberService mservice;
-	//�쉶�썝媛��엯 �솕硫� �씠�룞
+	//회원가입 화면 이동
 	
 	@GetMapping("member")
 	public void write() {
@@ -25,44 +29,47 @@ public class MemberController {
 	} 
 	@PostMapping("member")
 	public void Postmember(MemberDTO mdto) {
-		// �쉶�썝媛��엯 �솕硫댁쓣 �넻�빐 �뼸�뼱吏� �뜲�씠�꽣 insert
+		// 회원가입 화면을 통해 얻어진 데이터 insert
 		mservice.insert(mdto);
 	}
 	
-	//濡쒓렇�씤 �솕硫� �씠�룞 
+	//로그인 화면 이동 
 	@GetMapping("login")
 	public void login() {
 		System.out.println("member/login");
 	} 
-	// 濡쒓렇�씤 �솕硫댁쓣 �넻�빐 �뼸�뼱吏� �뜲�씠�꽣瑜� �솢�슜�븯�뿬 select
+	// 로그인 화면을 통해 얻어진 데이터를 활용하여 select
 	
 	@PostMapping("login")
 	public String Postlogin(MemberDTO mdto,HttpSession session) {
 		MemberDTO login=mservice.login(mdto);
 		
-		//MemberDTO�뿉 �엳�뒗 MemberDTO [id=abcd, password=1234, name=�젙�옄諛�]瑜� �꽭�뀡 �쁺�뿭�뿉 login�씠�씪�뒗 蹂��닔�뿉 ���옣
-		// �꽭�뀡媛앹껜(session)�뿉       login蹂��닔�뿉, log媛믪쓣 ���옣(setAttribute)
+		//MemberDTO에 있는 MemberDTO [id=abcd, password=1234, name=정자바]를 세션 영역에 login이라는 변수에 저장
+		// 세션객체(session)에       login변수에, log값을 저장(setAttribute)
 		session.setAttribute("login", login);
 		
 		
-		 // session.invalidate(); 濡쒓렇�븘�썐
+		 // session.invalidate(); 로그아웃
 		
-		// session�쁺�뿭�뿉 login�씠�씪�뒗 蹂��닔�뿉 媛믪씠 �엳�쑝硫� 濡쒓렇�씤 �맂 梨꾨줈
+		// session영역에 login이라는 변수에 값이 있으면 로그인 된 채로
 		
 		if(session.getAttribute("login")!=null) {
 			
-			//main�럹�씠吏�濡� �씠�룞 
+			//main페이지로 이동 
 			return "redirect:/page/mainpage";
 			
-		}else { //session �쁺�뿭�뿉 login�씠���뒓 蹂��닔�뿉 媛믪씠 �뾾�쑝硫�(null)
-			//�떎�떆 濡쒓렇�씤 �븷 �닔 �엳寃� 濡쒓렇�씤 �럹�씠吏�濡� �씠�룞 
+		}else { //session 영역에 login이란느 변수에 값이 없으면(null)
+			//다시 로그인 할 수 있게 로그인 페이지로 이동 
 			
-			return "redirect:/member/login";
+			return "redirect:/member/member";
 		}
-		// session�쁺�뿭�뿉 login�씠�씪�뒗 蹂��닔�뿉 媛믪씠 �뾾�쑝硫� (null)
+		// session영역에 login이라는 변수에 값이 없으면 (null)
+		
+	
 		
 		
 	}
 	
-	
+
+
 }
