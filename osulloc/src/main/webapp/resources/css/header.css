@@ -139,10 +139,12 @@ img{
     text-indent: -99999px;
 }
 
-#logoutBtn{
+#logout{
 	position : absolute;
-	top:-2px;
-	right : -30px;
+	top:-5px;
+	right : -18px;
+	width:60px;
+	height:30px;
 }
 .welcome{
 	margin-bottom : 10px;

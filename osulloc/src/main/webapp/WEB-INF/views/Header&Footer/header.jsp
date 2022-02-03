@@ -20,7 +20,8 @@
        <div class="member" method="POST">
        		<div class="welcome">
                <c:if test="${login != null }">
-					<p>${login.id}님 환영 합니다.</p><button id="logoutBtn" type="button">로그아웃</button></c:if>
+					<p>${login.id}님 환영 합니다.</p>
+					<input id="logout" type="button" onclick="location.href='/member/logout'" value="로그아웃"></input></c:if>
 			</div>
            <ul>
                <c:if test="${login == null}"><li><a href="/member/login">로그인</a></li></c:if>

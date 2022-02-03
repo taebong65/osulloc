@@ -69,7 +69,17 @@ public class MemberController {
 		
 		
 	}
-	
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception{
+		
+		session.invalidate();
+		
+		return "redirect:/page/mainpage";
+	}
+
+	    }
 
 
-}
+
+
